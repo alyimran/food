@@ -1,4 +1,4 @@
-import { View, Text , StyleSheet } from 'react-native'
+import { View, Text , StyleSheet , ScrollView} from 'react-native'
 import React, {useState} from 'react'
 import SearchBar from '../components/SearchBar'
 import useResults from '../hooks/useResults';
@@ -16,17 +16,17 @@ export default function SearchScreen() {
    
 
   return (
-    <View>
+    <>
       <SearchBar term= {term}
        onTermChange={setTerm}
        onTermSubmitted= {(searchTerm)=>searchApi(term)}
        />
-      {errorMessage?(<Text>{errorMessage}</Text>):null}
-      <Text>we hava found {results.length} results</Text>
+       <ScrollView>
       <ResultList  results ={filterResultsByPrice("$")} title= "Cost effective"/>
       <ResultList  results ={filterResultsByPrice("$$")} title= "Bit Pricier"/>
       <ResultList  results ={filterResultsByPrice("$$$")} title= "Big Spender"/>
-    </View>
+      </ScrollView>
+    </>
   )
 }
 

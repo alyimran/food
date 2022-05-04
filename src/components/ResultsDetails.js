@@ -15,7 +15,7 @@ export default function ResultsDetails({result}) {
 
 const styles = StyleSheet.create({
     containerStyle:{
-        marginLeft:10
+        marginLeft:15
     },
     imageStyle:{
         width:250,
@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
     ,
     nameStyle:{
         fontWeight:'bold',
+        marginTop:5
     }
 });
